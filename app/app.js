@@ -3,6 +3,12 @@
 
     window.app = {
         isPalindrome: function (str) {
+            if(str == null)
+            {
+                throw new Error("Null");
+            }
+            else
+            {
             var strTemp = str.toLowerCase(),
                 strLength = strTemp.length;
             if (str === '') {
@@ -14,7 +20,7 @@
                     return false;
                 }
             }
-            return true;
+            return true;}
         },
 
         vowelCount: function (str) {
@@ -28,13 +34,23 @@
             return vovCount;
         },
         generateMessage: function (text) {
-            var palindrome = this.isPalindrome(text);
-            var vowel = this.vowelCount(text);
-            if (text.length > 0) {
-                return {vowel: vowel, palindrome: palindrome};
-            } else {
-                throw new Error('Empty string!');
+            if(text == null)
+            {
+                throw new Error("Null")
             }
+            else
+            {
+                var palindrome = this.isPalindrome(text);
+                var vowel = this.vowelCount(text);
+
+                if (text.length > 0 ) {
+                    return {vowel: vowel, palindrome: palindrome};
+                } else
+                {
+                    throw new Error('Empty string!');
+                }
+            }
+
         }
     };
 
